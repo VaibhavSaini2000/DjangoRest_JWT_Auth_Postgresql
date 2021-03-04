@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading_Right: Signup Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-12 col-md-5">
+            <h2>Sign Up</h2>
+            <form action=" " method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input class="form-control" type="text" name="firstname" placeholder="Firstname">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="lastname" placeholder="Lastname">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password2" placeholder="Confirm Password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </div>
+                <div class="form-group">
+                    <a href="./" class="btn btn-secondary btn-block" type="button">Back to Login Page</a>
+                </div>
+            </form>
+            <div>
+                {% for message in messages %}
+                <h3> {{message}} </h3>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

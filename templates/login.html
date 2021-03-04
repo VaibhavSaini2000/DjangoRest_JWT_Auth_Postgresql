@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading_Right: Login Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-12 col-md-5">
+            <h2>Log In</h2>
+            <form action=" " method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-block" type="submit">Log In</button>
+                </div>
+            </form>
+            <div>
+                <a href="./signup" class="btn btn-primary btn-block" type="button">Sign Up</a>
+            </div>
+            <div>
+                {% for message in messages %}
+                <h3> {{message}} </h3>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
